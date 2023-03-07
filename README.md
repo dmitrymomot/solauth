@@ -1,5 +1,7 @@
 # solauth
 
+[![Tests](https://github.com/dmitrymomot/solauth/actions/workflows/tests.yml/badge.svg)](https://github.com/dmitrymomot/solauth/actions/workflows/tests.yml)
+
 Issuing access token based on signed message by Solana wallet.
 
 ## Usage
