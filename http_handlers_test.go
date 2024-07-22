@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -14,7 +15,7 @@ import (
 )
 
 var (
-	authSigningKey = []byte("secret")
+	authSigningKey = []byte("f0b69cef-c945-4744-9ee2-ca5cf3376ce2")
 	wallet, _      = types.AccountFromBase58("4JVyzx75j9s91TgwVqSPFN4pb2D8ACPNXUKKnNBvXuGukEzuFEg3sLqhPGwYe9RRbDnVoYHjz4bwQ5yUfyRZVGVU")
 )
 
@@ -73,6 +74,7 @@ func TestVerifySignedMessage(t *testing.T) {
 	require.NotEmpty(t, response["access_token"])
 	require.NotEmpty(t, response["refresh_token"])
 	require.NotEmpty(t, response["expires_in"])
+	fmt.Println(response["access_token"])
 }
 
 func TestRefreshToken(t *testing.T) {
